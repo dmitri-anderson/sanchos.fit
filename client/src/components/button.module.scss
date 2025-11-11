@@ -1,0 +1,40 @@
+@use '../styles/tokens' as *;
+@use './button-common' as m;
+
+.button {
+  @include m.button-container();
+}
+
+.icon { @include m.button-icon(); }
+.label { @include m.button-label(); }
+.svgIcon { @include m.button-svgIcon(); }
+
+.primary {
+  background: var(--brand-gradient);
+  color: var(--rp-dark-text);
+  font-weight: 700;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.28),
+    0 0 18px 4px color-mix(in oklab, var(--rp-love), transparent 75%);
+  transition: box-shadow 160ms ease;
+  &:hover {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.40),
+      0 0 22px 6px color-mix(in oklab, var(--rp-love), transparent 65%);
+  }
+  &:active {
+    box-shadow:
+      inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+      0 0 14px 3px color-mix(in oklab, var(--rp-love), transparent 80%);
+  }
+}
+
+.secondary {
+  background: var(--rp-surface);
+  color: var(--rp-text);
+  font-weight: 400;
+  box-shadow: inset 0 0 0 1px var(--rp-subtle);
+  .svgIcon { color: var(--rp-subtle); }
+}
+
+

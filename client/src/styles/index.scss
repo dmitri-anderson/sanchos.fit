@@ -1,0 +1,88 @@
+@use './themes/themes';
+@use './tokens' as *;
+
+:root {
+  font-family: 'Comfortaa', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--rp-text);
+  background-color: var(--rp-base);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Brand gradient */
+  --brand-start: #{$brand-start};
+  --brand-end: #{$brand-end};
+  --brand-gradient: #{$brand-gradient};
+}
+
+a {
+  font-weight: 500;
+  color: var(--rp-foam);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--rp-iris);
+}
+
+body {
+  position: fixed;
+  inset: 0;
+  margin: 0;
+  display: flex;
+  place-items: center;
+}
+
+h1 {
+  font-size: $font-size-4xl;
+  line-height: 1.1;
+}
+h2 {
+  font-size: $font-size-3xl;
+  line-height: 1.15;
+}
+h3 {
+  font-size: $font-size-2xl;
+  line-height: 1.2;
+}
+p, li, button, input, textarea {
+  font-size: $font-size-base;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: $space-3 $space-4;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--rp-surface);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--rp-iris);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: var(--rp-text);
+    background-color: var(--rp-base);
+  }
+  a:hover {
+    color: var(--rp-iris);
+  }
+  button {
+    background-color: var(--rp-surface);
+  }
+}
+

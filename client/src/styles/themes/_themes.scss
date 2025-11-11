@@ -1,0 +1,13 @@
+@use './rosepine-tokens' as tokens;
+
+// Emit both themes
+@include tokens.emit-theme(rosepine);
+@include tokens.emit-theme(rosepine-dawn);
+
+// Expose both palettes under stable prefixes
+:root {
+  @include tokens.emit-exposed('rp-dark', rosepine);
+  @include tokens.emit-exposed('rp-dawn', rosepine-dawn);
+}
+
+
